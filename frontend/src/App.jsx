@@ -18,7 +18,7 @@ function App() {
   function addTask() {
     if (taskinput === '') return
 
-    fetch('http://localhost:3000/add-todo', {
+    fetch('https://todo-ai-chi.vercel.app/add-todo', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -38,7 +38,7 @@ function App() {
     let newTasks = [...tasks]
     newTasks.splice(index, 1)
 
-    fetch('http://localhost:3000/delete-todo', {
+    fetch('https://todo-ai-chi.vercel.app/delete-todo', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -54,7 +54,7 @@ function App() {
   }
 
   useEffect(() => {
-    fetch('http://localhost:3000/todos')
+    fetch('https://todo-ai-chi.vercel.app/todos')
       .then(res => res.json())
       .then(data => {
         console.log(data) 
